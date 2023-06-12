@@ -10,7 +10,7 @@ window.onload = function() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.API_KEY}`
+        'Authorization': `Bearer pat-na1-4a1d75f9-05b9-4ab2-a7ed-4fc7260b22f6`
       },
       body: JSON.stringify({
         properties: [
