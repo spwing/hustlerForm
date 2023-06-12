@@ -10,7 +10,7 @@ window.onload = function() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${HUBSPOT_ACCESS_TOKEN}` 
+        'Authorization': `Bearer ${process.env.API_KEY}`
       },
       body: JSON.stringify({
         properties: [
