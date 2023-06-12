@@ -1,10 +1,3 @@
-
-import Dotenv from 'dotenv-webpack';
-
-export const plugins = [
-  new Dotenv()
-];
-
 window.onload = function() {
   document.getElementById('linkForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form from submitting normally
