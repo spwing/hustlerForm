@@ -17,7 +17,7 @@ window.onload = function() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.API_KEY}` 
+        'Authorization': `Bearer ${HUBSPOT_ACCESS_TOKEN}` 
       },
       body: JSON.stringify({
         properties: [
