@@ -181,4 +181,19 @@ body {
         display: none;
     }
   }
+
+@media (max-width: 430px) {
+    .message-container {
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    width: 300px;
+    align-self: center;
+    border-top: 40px;
+    max-width: 500px;
+    display: inline-flex;
+    flex-direction: column;
+    padding: 25px;
+    height: 200px;
+    margin: 20px;
+  }
   
