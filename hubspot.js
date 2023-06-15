@@ -5,35 +5,31 @@ window.onload = function() {
     var form = event.target;
     var formData = new FormData(form);
 
-    // Make API request to HubSpot
-    fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
+    fetch('http://3.135.182.101/api/add-contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer `
       },
       body: JSON.stringify({
-        properties: [
-          {
-            name: 'oldlink',
-            value: formData.get('oldlink')
-          },
-          {
-            name: 'email',
-            value: formData.get('email')
-          }
-        ]
+        email: formData.get('email'),
+        oldLink: formData.get('oldLink')
       })
     })
-    .then(function(response) {
-      if (response.ok) {
-        console.log('Contact added successfully');
-      } else {
-        console.error('Error adding contact');
-      }
-    })
-    .catch(function(error) {
-      console.error('Error:', error);
-    });
+     .then(function(response) {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Error adding contact');
+        }
+      })
+      .then(function(data) {
+        console.log(data.message); // Success message from the server
+        // Clear the form fields if needed
+        form.reset();
+      })
+      .catch(function(error) {
+        console.error('Error:', error.message);
+        // Handle the error and display an error message to the user
+      });
   });
-}
+};
