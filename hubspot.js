@@ -5,7 +5,7 @@ window.onload = function() {
     var form = event.target;
     var formData = new FormData(form);
 
-    fetch('https://3.135.182.101/api/add-contact', {
+    fetch('https://api.hustlerform.com/api/add-contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
