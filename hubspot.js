@@ -4,6 +4,8 @@ window.onload = function() {
 
     var form = event.target;
     var formData = new FormData(form);
+    console.log(formData.get('email'));
+    console.log(formData.get('oldLink'));
 
     fetch('https://api.hustlerform.com/api/add-contact', {
       method: 'POST',
