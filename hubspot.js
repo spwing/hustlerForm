@@ -20,6 +20,8 @@ window.onload = function() {
      .then(function(response) {
         if (response.ok) {
           return response.json();
+          var messageElement = document.getElementById('message');
+          messageElement.innerHTML = "Success! Look out for an email from us in 3 days";
         } else {
           throw new Error('Error adding contact');
         }
