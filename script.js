@@ -1,23 +1,7 @@
-function isMobileDevice() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
+document.getElementById("linkForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent form submission
 
-function displayMobileButton() {
-    if (isMobileDevice()) {
-        var convertButton = document.getElementById("convertButtonMobile");
-        convertButton.style.display = "inline";
+  // Display the message
+  document.getElementById("message").style.display = "block";
 
-        var convertButton = document.getElementById("convertButtonWeb");
-        convertButton.style.display = "none";
-    } else {
-        var convertButton = document.getElementById("convertButtonMobile");
-        convertButton.style.display = "none";
-
-        var convertButton = document.getElementById("convertButtonWeb");
-        convertButton.style.display = "inline";
-    }
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    displayMobileButton();
 });
